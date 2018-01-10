@@ -5,7 +5,8 @@ using UnityEngine.UI;
 
 public class PontuacaoScript : MonoBehaviour {
 
-    public Text txtPontos; 
+    public Text txtPontos;
+  
 
     public static int score;
  

@@ -21,6 +21,7 @@ public class DestroiBolaScript : MonoBehaviour {
         if (target.gameObject.tag == "bola")
         {
             Destroy(target.gameObject);
+            GameOverScript.isGameOver = true;
         } 
         
     }

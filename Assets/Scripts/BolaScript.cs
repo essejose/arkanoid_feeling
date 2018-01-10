@@ -26,6 +26,7 @@ public class BolaScript : MonoBehaviour {
         if (target.gameObject.tag == "bloco")
         {
             PontuacaoScript.score++;
+         
             Destroy(target.gameObject);
         }
 
