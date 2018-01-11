@@ -19,7 +19,7 @@ public class GameOverScript : MonoBehaviour {
         {
 
             Painel.SetActive(true);
-
+            
         }
     }
 }
