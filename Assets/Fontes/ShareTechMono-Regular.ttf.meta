@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 01440b172424f2c48bccd1900201dbdd
+timeCreated: 1515643869
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Share Tech Mono
+  fontNames:
+  - Share Tech Mono
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

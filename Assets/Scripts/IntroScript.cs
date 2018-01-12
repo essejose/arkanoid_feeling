@@ -8,12 +8,34 @@ public class IntroScript : MonoBehaviour {
     public Text intro;
     public Text intro2;
     public Button btn;
-
+    public AudioClip voice;
+    public AudioSource audioSource;
     public void  LoadIntro()
     {
-        Debug.Log("You have clicked the button!");
-        SceneManager.LoadScene("game");
+        //Debug.Log("You have clicked the button!");
+
+        PlayAudio();
+        //SceneManager.LoadScene("game");
     }
+
+    void PlayAudio()
+    {
+        btn.interactable = false;
+        float clipLength = voice.length;
+
+        audioSource.PlayOneShot(voice, 0.7F);
+        StartCoroutine(StartMethod(clipLength));
+       
+    }
+
+    private IEnumerator StartMethod(float clipLength)
+    {
+        yield return new WaitForSeconds(clipLength);
+
+        SceneManager.LoadScene("game");
+
+    }
+
     void Start()
     {
         StartCoroutine(FadeTextToFullAlpha(2f, intro));

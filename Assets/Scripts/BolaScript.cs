@@ -5,13 +5,15 @@ using UnityEngine;
 public class BolaScript : MonoBehaviour {
  
     public int ballforce;
-  
+
+ 
+
     private Rigidbody2D myBody;
 
     // Use this for initialization
     void Start () {
        
-        myBody = this.GetComponent<Rigidbody2D>();
+        myBody = this.GetComponent<Rigidbody2D>(); 
         myBody.AddForce(new Vector2(ballforce, ballforce));
     }
 	
@@ -25,16 +27,14 @@ public class BolaScript : MonoBehaviour {
 
         if (target.gameObject.tag == "bloco")
         {
-            PontuacaoScript.score++;
-         
+            PontuacaoScript.score++; 
             Destroy(target.gameObject);
         }
 
        if (target.gameObject.tag == "plataforma")  
         {
 
-            // myBody.AddForce(new Vector2(vel * Random.Range(-10, 10), 300));
-        
+            // myBody.AddForce(new Vector2(vel * Random.Range(-10, 10), 300)); 
 
         }
     }
