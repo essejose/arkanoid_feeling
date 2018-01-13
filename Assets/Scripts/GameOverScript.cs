@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class GameOverScript : MonoBehaviour {
 
     public GameObject Painel;
@@ -21,5 +21,14 @@ public class GameOverScript : MonoBehaviour {
             Painel.SetActive(true);
             
         }
+    }
+
+   public void restartGame()
+    {
+        PontuacaoScript.score = 0;
+        isGameOver = false;
+        Painel.SetActive(false);
+
+        SceneManager.LoadScene("game");
     }
 }

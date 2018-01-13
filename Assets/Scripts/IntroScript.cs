@@ -10,6 +10,7 @@ public class IntroScript : MonoBehaviour {
     public Button btn;
     public AudioClip voice;
     public AudioSource audioSource;
+    public AudioSource musicGame;
     public void  LoadIntro()
     {
         //Debug.Log("You have clicked the button!");
@@ -23,6 +24,7 @@ public class IntroScript : MonoBehaviour {
         btn.interactable = false;
         float clipLength = voice.length;
 
+        musicGame.Stop();
         audioSource.PlayOneShot(voice, 0.7F);
         StartCoroutine(StartMethod(clipLength));
        

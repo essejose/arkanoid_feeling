@@ -12,7 +12,7 @@ public class PontuacaoScript : MonoBehaviour {
  
 
     void Update()
-    {
+    {   
         txtPontos.text = PontuacaoScript.score.ToString();
         
     }
