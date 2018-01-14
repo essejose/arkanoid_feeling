@@ -8,9 +8,14 @@ public class IntroScript : MonoBehaviour {
     public Text intro;
     public Text intro2;
     public Button btn;
+
     public AudioClip voice;
     public AudioSource audioSource;
     public AudioSource musicGame;
+
+
+ 
+    //btn
     public void  LoadIntro()
     {
         //Debug.Log("You have clicked the button!");
@@ -22,6 +27,7 @@ public class IntroScript : MonoBehaviour {
     void PlayAudio()
     {
         btn.interactable = false;
+      
         float clipLength = voice.length;
 
         musicGame.Stop();
@@ -40,10 +46,12 @@ public class IntroScript : MonoBehaviour {
 
     void Start()
     {
-        StartCoroutine(FadeTextToFullAlpha(2f, intro));
-        StartCoroutine(FadeTextToFullAlpha(2f, intro2));
-     //   StartCoroutine(MoveButtom(1f, btn));
+        musicGame.Stop();
+        StartCoroutine(FadeTextToFullAlpha(2f, intro, null));
+        StartCoroutine(FadeTextToFullAlpha(2f, intro2, musicGame));
        
+         
+
 
     }
     void Update()
@@ -57,15 +65,17 @@ public class IntroScript : MonoBehaviour {
     {
 
 
-        float move_y = 175 * 2 * Time.deltaTime;
+        float move_y = 1 * 4 * Time.deltaTime;
+        b.transform.position = new Vector3(0,  1f * (Time.deltaTime / 1f) , transform.position.z);
+        
+ 
 
-        b.transform.Translate(0, move_y, 0);
         StopCoroutine("MoveButtom");
         yield return null;
       
     }
 
-    public IEnumerator FadeTextToFullAlpha(float t, Text i)
+    public IEnumerator FadeTextToFullAlpha(float t, Text i, AudioSource a)
     {
         i.color = new Color(i.color.r, i.color.g, i.color.b, 0);
         while (i.color.a < 1.0f)
@@ -73,7 +83,24 @@ public class IntroScript : MonoBehaviour {
             i.color = new Color(i.color.r, i.color.g, i.color.b, i.color.a + (Time.deltaTime / t));
             yield return null;
         }
+        musicGame.Play();
+        btn.gameObject.SetActive(true);
+        StartCoroutine(FadeTextToFullAlphaButtom(2f, btn));
     }
+
+    public IEnumerator FadeTextToFullAlphaButtom(float t, Button i )
+    {
+        i.image.color = new Color(i.image.color.r, i.image.color.g, i.image.color.b, 0);
+        while (i.image.color.a < 1.0f)
+        {
+            i.image.color = new Color(i.image.color.r, i.image.color.g, i.image.color.b, i.image.color.a + (Time.deltaTime / t));
+            yield return null;
+        }
+     
+    }
+
+
+
     public IEnumerator FadeTextToZeroAlpha(float t, Text i)
     {
         i.color = new Color(i.color.r, i.color.g, i.color.b, 1);
