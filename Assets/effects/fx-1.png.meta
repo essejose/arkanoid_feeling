@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 2bd73b640ca44994ab23c878105cf287
-timeCreated: 1513552454
+timeCreated: 1515896707
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -10,6 +10,12 @@ TextureImporter:
     21300006: fx-1_7
     21300008: fx-1_8
     21300010: fx-1_10
+    21300012: fx-1_2
+    21300014: fx-1_3
+    21300016: fx-1_4
+    21300018: fx-1_5
+    21300020: fx-1_9
+    21300022: fx-1_11
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -33,7 +39,7 @@ TextureImporter:
   textureFormat: 1
   maxTextureSize: 2048
   textureSettings:
-    filterMode: -1
+    filterMode: 0
     aniso: -1
     mipBias: -1
     wrapMode: 1
@@ -118,6 +124,58 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
+      name: fx-1_2
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 24
+        width: 13
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: fx-1_3
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 24
+        width: 13
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: fx-1_4
+      rect:
+        serializedVersion: 2
+        x: 190
+        y: 25
+        width: 13
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: fx-1_5
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 25
+        width: 13
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
       name: fx-1_6
       rect:
         serializedVersion: 2
@@ -149,10 +207,23 @@ TextureImporter:
         serializedVersion: 2
         x: 153
         y: 1
-        width: 36
-        height: 37
+        width: 13
+        height: 13
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: fx-1_9
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 1
+        width: 13
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -162,10 +233,23 @@ TextureImporter:
         serializedVersion: 2
         x: 190
         y: 0
-        width: 38
-        height: 38
+        width: 13
+        height: 13
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: fx-1_11
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 0
+        width: 13
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
