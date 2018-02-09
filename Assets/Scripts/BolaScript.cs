@@ -5,22 +5,29 @@ using UnityEngine;
 public class BolaScript : MonoBehaviour {
  
     public int ballforce;
-
- 
-
+     
     private Rigidbody2D myBody;
+
+    bool shotball = false;
 
     // Use this for initialization
     void Start () {
        
         myBody = this.GetComponent<Rigidbody2D>(); 
-        myBody.AddForce(new Vector2(ballforce, ballforce));
+       
     }
 	
 	// Update is called once per frame
 	void Update () {
-		
-	}
+
+        if (!shotball && Input.GetButtonDown("Fire1"))
+        {
+            myBody.AddForce(new Vector2(ballforce, ballforce));
+            shotball = true;
+        }
+
+
+    }
 
     void OnCollisionEnter2D(Collision2D target)
     {
