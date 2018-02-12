@@ -10,28 +10,26 @@ public class ControlePlataformaScript : MonoBehaviour {
     public float velocidade;
     public Button btnr;
     public Button btnl;
+ 
 
-    // Use this for initialization
+    private Touch touch;
+
+    private Rigidbody2D myBody;
     void Start () {
-  
-     //       Screen.orientation = ScreenOrientation.LandscapeLeft;
-     
-    }
-	
-	// Update is called once per frame
-	void Update () {
-        Mover();
+    
        
     }
+ 
+	void Update () {
+        Mover(); 
+    }
 
-
+    //TODO: REMOVER
     public void MoverEsquerda()
     {
 
         float move_x = 13  * velocidade * Time.deltaTime;
-
-
-        transform.Translate(move_x, 0, 0.0f);
+  
 
         if (transform.position.x < limiteEsquerdo || transform.position.x > limiteDireito)
         {
@@ -41,6 +39,7 @@ public class ControlePlataformaScript : MonoBehaviour {
         }
     }
 
+    //TODO: REMOVER
     public void MoverDireita()
     {
         float move_x = -13 * velocidade * Time.deltaTime;
@@ -62,11 +61,51 @@ public class ControlePlataformaScript : MonoBehaviour {
 
     void Mover()
     {
+
         float move_x = Input.GetAxisRaw("Horizontal") * velocidade * Time.deltaTime;
 
         transform.Translate(move_x, 0, 0.0f);
-       
 
-    }
+       
+        if(Input.touchCount > 0)
+        {
+            //  Vector3 stageDimensions = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height,0));
+
+            touch = Input.GetTouch(0);
+            float middle = Screen.width / 2;
+
+            print(Input.touchCount);
+
+            
+           
+
+            if (touch.position.x < middle )
+            {
+  
+                if (transform.position.x >= limiteEsquerdo)
+                {
+                  
+                    transform.Translate(-2 * velocidade * Time.deltaTime, 0, 0.0f);
+                    
+                }
+                    
+
+            }
+
+
+            if (touch.position.x > middle)
+            { 
+
+                if (transform.position.x < limiteDireito)  
+                { 
+                    transform.Translate( 2 * velocidade * Time.deltaTime, 0, 0.0f);
+
+                }
+
+              
+            };
+        }
+   }
+
 
 }

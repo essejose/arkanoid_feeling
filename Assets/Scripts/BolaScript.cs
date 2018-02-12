@@ -9,25 +9,33 @@ public class BolaScript : MonoBehaviour {
     private Rigidbody2D myBody;
 
     bool shotball = false;
-
+    public GameObject player;
+    private Vector3 offset;
     // Use this for initialization
     void Start () {
        
-        myBody = this.GetComponent<Rigidbody2D>(); 
-       
+        myBody = this.GetComponent<Rigidbody2D>();
+        offset = transform.position - player.transform.position;
+
     }
 	
 	// Update is called once per frame
 	void Update () {
 
-        if (!shotball && Input.GetButtonDown("Fire1"))
+        if (!shotball && Input.GetButtonDown("Fire1") && !GameSceneController.inGame)
         {
-            myBody.AddForce(new Vector2(ballforce, ballforce));
+            print("aq");
+            GameSceneController.inGame = true;
             shotball = true;
+            myBody.AddForce(new Vector2(ballforce, ballforce));
+           
+            
         }
-
-
-    }
+        if (!GameSceneController.inGame)
+        {
+            transform.position = player.transform.position + offset;
+        }
+        }
 
     void OnCollisionEnter2D(Collision2D target)
     {
@@ -38,10 +46,10 @@ public class BolaScript : MonoBehaviour {
             Destroy(target.gameObject);
         }
 
-       if (target.gameObject.tag == "plataforma")  
+       if (target.gameObject.tag == "plataforma")
         {
-
-            // myBody.AddForce(new Vector2(vel * Random.Range(-10, 10), 300)); 
+            myBody.velocity = new Vector2((float)(myBody.velocity.x + .1), (float)(myBody.velocity.y + .1));
+            //   myBody.AddForce(new Vector2(1 * Random.Range(-10, 10), 300)); 
 
         }
     }
