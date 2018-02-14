@@ -27,6 +27,7 @@ public class GameOverScript : MonoBehaviour {
     {
         PontuacaoScript.score = 0;
         isGameOver = false;
+        GameSceneController.inGame = false;
         Painel.SetActive(false);
 
         SceneManager.LoadScene("game");

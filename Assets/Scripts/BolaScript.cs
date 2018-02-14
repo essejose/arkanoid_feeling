@@ -10,33 +10,45 @@ public class BolaScript : MonoBehaviour {
 
     bool shotball = false;
     public GameObject player;
+    public GameObject painel;
     private Vector3 offset;
-    // Use this for initialization
+
+
+
     void Start () {
        
         myBody = this.GetComponent<Rigidbody2D>();
         offset = transform.position - player.transform.position;
-
+        painel.SetActive(true);
     }
 	
 	// Update is called once per frame
 	void Update () {
 
-        if (!shotball && Input.GetButtonDown("Fire1") && !GameSceneController.inGame)
-        {
-            print("aq");
-            GameSceneController.inGame = true;
-            shotball = true;
-            myBody.AddForce(new Vector2(ballforce, ballforce));
-           
-            
-        }
+
+
         if (!GameSceneController.inGame)
         {
             transform.position = player.transform.position + offset;
         }
-        }
 
+    }
+
+    public void shotBall()
+    {
+        //if (!shotball && Input.GetButtonDown("Fire1") && !GameSceneController.inGame)
+       // {
+           
+            GameSceneController.inGame = true;
+            shotball = true;
+            myBody.AddForce(new Vector2(ballforce, ballforce));
+            painel.SetActive(false);
+
+        //}
+
+
+
+    }
     void OnCollisionEnter2D(Collision2D target)
     {
 
