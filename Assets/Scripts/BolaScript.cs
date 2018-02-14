@@ -37,12 +37,14 @@ public class BolaScript : MonoBehaviour {
     public void shotBall()
     {
         //if (!shotball && Input.GetButtonDown("Fire1") && !GameSceneController.inGame)
-       // {
-           
+        // {
+
+            ControlePlataformaScript.movePlatform = false;
             GameSceneController.inGame = true;
             shotball = true;
             myBody.AddForce(new Vector2(ballforce, ballforce));
-            painel.SetActive(false);
+            painel.SetActive(false); 
+            ControlePlataformaScript.movePlatform = true;
 
         //}
 
