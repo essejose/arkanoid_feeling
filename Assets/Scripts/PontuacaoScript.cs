@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PontuacaoScript : MonoBehaviour {
 
@@ -15,5 +16,9 @@ public class PontuacaoScript : MonoBehaviour {
     {   
         txtPontos.text = PontuacaoScript.score.ToString();
         
+        if(score == 11)
+        {
+            SceneManager.LoadScene("intro");
+        }
     }
 }
